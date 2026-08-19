@@ -15,6 +15,8 @@ Do not rely on training data for Supabase features. Function signatures, config.
 
 First, fetch `https://supabase.com/changelog.md` (a lightweight summary index — not a heavy pull), scan for `breaking-change` tags relevant to your task, and follow the linked page for any that apply. Then look up the relevant topic using the documentation access methods below.
 
+Config surfaces can diverge across contexts too. Auth email OTP length, for example: local `config.toml` uses `auth.email.otp_length`, the hosted Management API uses `mailer_otp_length`, and Dashboard field placement isn't guaranteed to match either — don't state a Dashboard path exists without checking the current UI or Management API.
+
 **2. Verify your work.**
 After implementing any fix, run a test query to confirm the change works. A fix without verification is incomplete.
 
